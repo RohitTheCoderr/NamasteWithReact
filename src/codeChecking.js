@@ -98,20 +98,20 @@
 // const myfun=parentFun();
 // console.log(myfun);
 
-setTimeout(()=>{
-    console.log("hello world");
-},1000)
+// setTimeout(()=>{
+//     console.log("hello world");
+// },1000)
 
- setTimeout(()=>{
-    return new Promise((resolve, reject) => {
-       const a= true;
-       if (true) {
-        resolve("hii")
-       } 
-       else{
-        reject("reject")
-       }
-    })
-}, 2000)
+//  setTimeout(()=>{
+//     return new Promise((resolve, reject) => {
+//        const a= true;
+//        if (true) {
+//         resolve("hii")
+//        } 
+//        else{
+//         reject("reject")
+//        }
+//     })
+// }, 2000)
 
 

@@ -6,15 +6,15 @@ const useResturentMenu= (resId)=>{
 useEffect(()=>{
     fetchData();
 },[]);
-console.log(resId);
-console.log("menuApi",MENU_Api);
+// console.log(resId);
+// console.log("menuApi",MENU_Api);
 const fetchData = async () => {
         try {
                 const menu = await fetch(MENU_Api+resId);
-            console.log("menu data",menu);
+            // console.log("menu data",menu);
 
             const jsonData = await menu.json();
-            console.log("resturent data rohit", jsonData);
+            // console.log("resturent data rohit", jsonData);
             setResInfo(jsonData);
             // setOptionVegOrNon(jsonData.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card.itemCards || []);
         } catch (error) {
@@ -22,7 +22,7 @@ const fetchData = async () => {
          // Optionally, you can set some error state here for user feedback
         }  
     } 
-    console.log(" resInfo data",resInfo);
+    // console.log(" resInfo data",resInfo);
     return resInfo;
 }
 export default useResturentMenu;

@@ -215,3 +215,14 @@ and there are also different name like
 but for loading it consume same time in this time we show on this screen something else like loading... ect.  for handle this time react have a Suspance function it is use for show something esle like loading. for more understanding goto app.js component and see Grocery component and how to route it 
   <!-- but when your application is small like some component then withought using lazy funtion its fine -->
   
+### Higher Order function :- higher order function is nothing else its just a function its take a component and return a component 
+* example  : use prometed tag on thi card 
+ see video no 11 0 to 23 minutes 
+
+
+# note:- after Higher ORder Function we leaarn about 
+### White is Control and uncontrol conmponent
+lifting the component 
+
+
+

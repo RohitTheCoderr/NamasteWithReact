@@ -8,7 +8,7 @@ const Header =()=>{
     const onlineStatus=useOnlineStatus()
     const liStyle = "p-1 m-1 h-10 font-bold "
     return(
-        <div className="flex justify-between bg-slate-400 w-screen h-[150px]">
+        <div className="flex justify-between bg-slate-400 w-full h-[150px]">
             <div className=" w-auto ">
                 <img className="w-32 " src={LOGO_URL}/>
             </div>
