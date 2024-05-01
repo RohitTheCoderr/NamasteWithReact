@@ -220,9 +220,39 @@ but for loading it consume same time in this time we show on this screen somethi
  see video no 11 0 to 23 minutes 
 
 
-# note:- after Higher ORder Function we leaarn about 
-### White is Control and uncontrol conmponent
-lifting the component 
+# note:- after Higher Order Function we leaarn about 
+### What is Control and uncontrol conmponent
+## lifting the component 
+
+# uncontrol conmponent:- when ever child component have  a power to control own self of items that is called uncontrol component like
+inside ResturentCategory component thier child component is CategoryItemList  :- 
+CategoryItemList :- this is control by own by using state for show or hide like this 
+* * * * * const [showItems, setShowItems]=useState(flase)
+  const handleClick = ()=>{
+    setShowItems(!showItems)      // es line se ye ho rha h ki agr showItems ki value pahle se flase ho to true ho jaye aur true ho to fase ho jaye jisse bar  bar call hone pr eski value true false hoti rahegi onclick hone pr jisse items show hide hoti rhegi niche condition ke hisab se 
+  }
+* * 
+
+# control component:- when ever parent componet have a power for controling their children components that is called control component  like
+you can see that in the resturentMenu they have a child component ResturentCategory and we pass here showItems={false}/> as props to control thier child component like-> CategoryList items for hide or show.
+  # NOTE: *************** control cmponent always control by parent component ****************
 
 
+### Props driling :- The problem with passing props 
+Passing props is a great way to explicitly pipe data through your UI tree to the components that use it.
 
+But passing props can become verbose and inconvenient when you need to pass some prop deeply through the tree, or if many components need the same prop. The nearest common ancestor could be far removed from the components that need data, and lifting state up that high can lead to a situation called “prop drilling”.
+ # Note: - in a simple way props drilling is way where we pass props one component to many component that is called props drilling 
+ If we need to pass some prop deeply through the tree then it it not good just one or two nearest component then it is good but pass the props through more then 2,3 then it used is bad
+
+##  In this situation we can use context hook,  react have a superPower for solving this problem by using context
+there are two type to consume this context
+1. by using context hooks 
+2. by using Consumer 
+# NOTE:-> becically coonsumer is use in class based component. its old way to consume context 
+but nowadays we use a function based component so we use a useContext hook 
+
+
+video pause on 1:07:00 remaining video is 1:1:00
+
+search senerio meaning

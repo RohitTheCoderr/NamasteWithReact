@@ -7,7 +7,7 @@ const ResContainer= (props)=>{
    //  if(aggregatedDiscountInfoV3.length>=1){
    //    const {discountTag,header,subHeader}=aggregatedDiscountInfoV3;
    //  }
-    
+   
     return(
       <>
           <div className=" text-center w-[300px] h-auto rounded-lg bg-gray-250 m-4 p-2 ">

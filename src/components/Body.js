@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 // import { HOMEPAGE_APi } from "../utils/constants";
 
-
 const BodyLayout =()=>{
   // const [resListData, setResListData] = useState(resList) // agr ham yha resList ko dalte h to pahle ye resList ki data render hoga jaise hi json ki data fetch ho jayega fir ye hat jayega 
   const [resListData, setResListData] = useState([])   

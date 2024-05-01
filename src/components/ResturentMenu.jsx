@@ -12,10 +12,14 @@ function ResturentMenu() {
 
     const[categories , setCategories]=useState([])
 // for Items list Show And Hide
- const [visible, setVisible]=useState(false)
-const toggleItems= ()=>{
-    setVisible(!visible);
-}
+//  const [visible, setVisible]=useState(false)
+// const toggleItems= ()=>{
+//     setVisible(!visible);
+// }
+
+const [showIndex, setShowIndex]=useState(0)
+
+
 
     const { resId } = useParams();
     // Fetching restaurant menu using custom hook
@@ -29,12 +33,12 @@ const toggleItems= ()=>{
             // console.log("category", restu.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
             const ItemsCategories = restu.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"]==
             "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-            console.log("this is categories",ItemsCategories);
+            // console.log("this is categories",ItemsCategories);
       setCategories(ItemsCategories)
         }
     }, [restu]);
     
-    console.log("useState Categories", categories);
+    // console.log("useState Categories", categories);
 
     if (restu === null) {
         return <Shimmer />;
@@ -86,7 +90,7 @@ const toggleItems= ()=>{
                     setOptionVegOrNon(itemCards);
                     }}>Both Veg & Non-Veg</button>
 
-                   <h2 className="bg-sky-300 py-2 rounded-lg text-blue-900 text-lg my-2">Menu Of This Restaurant</h2>
+                   <h2 className="bg-sky-300 py-2 rounded-lg text-blue-900 text-lg my-2 ">Menu Of This Restaurant</h2>
                   {/* <div  className="text-start font-bold ">Recommended ( <span>{optionVegOrNon.length}</span> )
                        <div className="flex justify-end w-4/5">
                           <button onClick={toggleItems} className="px-1 text-2xl bg-gray-200 rounded-sm rotate-90  ">{visible ? '<' : '>'}</button>
@@ -117,8 +121,13 @@ const toggleItems= ()=>{
 
                    <div>
                       {
-                        categories.map((category)=>(
-                          <ResturentCategory data={category?.card?.card}/>
+                        categories.map((category, index)=>(
+                          // control component 
+                          <ResturentCategory key={category?.card?.card?.title}
+                          data={category?.card?.card} 
+                          showItems={index=== showIndex ? true : false}
+                          setShowIndex={()=>setShowIndex(index)}
+                          />
                          ))
                       }
                    </div>
