@@ -16,7 +16,7 @@ const CategoryItemiList = ({ items }) => {
                 <div className=" h-2 w-2 bg-green-800 rounded-full "></div>
               </div>
               <div className="font-poping text-[18px] text-start ">
-                <span className="font-poping text-[22px]">
+                <span className="font-poping text-[22px] cursor-pointer">
                   {item.card?.info?.name}
                 </span>
                 <br></br>
@@ -43,12 +43,12 @@ const CategoryItemiList = ({ items }) => {
             </div>
             <div className=" w-2/6 flex items-center justify-center">
               <img
-                className=" rounded-lg w-48 h-32"
+                className=" rounded-lg w-48 h-32 cursor-pointer"
                 src={CDN_URL +item.card?.info?.imageId}
                  alt={item?.card?.info?.name}
               />
               <div className="absolute mb-[-7rem]">
-              <button  className=" py-0 px-2 bg-white rounded-sm text-green-700">{" "} Add +</button>
+              <button  className=" py-0 px-2 bg-white rounded-sm text-green-700 cursor-pointer">{" "} Add +</button>
               </div>
             </div>
           </div>

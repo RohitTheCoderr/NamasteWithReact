@@ -1,6 +1,6 @@
 import React from "react";
 
-class UserProfile2 extends React.Component {
+export class UserProfile2 extends React.Component {
     constructor(props) {
         super(props)
 
@@ -32,15 +32,15 @@ class UserProfile2 extends React.Component {
     render(props) {
         const { name, avatar_url, location,bio } = this.state.userInfo
         return (<>
-            <div id="user-card">
-                <h2>{name}</h2>
-                <img className="UserImg" src={avatar_url} alt="img" />
-                 <p><span>Bio:- </span>{bio}</p>
-                <p><span>Email: </span>{this.props.email}</p>
-                <p><span>Location: </span> {location}</p>
+            <div id="user-card" className="border-2 border-black rounded-[10px] p-2 text-center bg-green-400">
+                <h2 className="italic text-[rgb(0, 102, 255)] font-bold text-blue-800">{name}</h2>
+                <img  className="UserImg m-auto cursor-pointer h-[200px] w-[150px] border-2 border-black rounded-lg hover:scale-200 transition-all duration-2000" src={avatar_url} alt="img"/>
+                <p className="text-blue-600"><span className="text-green-600">BIO:- </span>{bio}</p>
+                <p className="text-blue-600"><span className="text-red-400">Email: </span>{this.props.email}</p>
+                <p><span className="text-red-600 ">Location: </span> {location}</p>
             </div>
         </>)
     }
 }
 
-export default UserProfile2;
+// export default UserProfile2;

@@ -22,7 +22,7 @@ const handleClick= ()=>{
             <span className="font-bold  text-lg">
               {data.title} ({data.itemCards.length})
             </span>
-            <span>⬇️</span>
+            <span className="cursor-pointer">⬇️</span>
           </div>
           {showItems && <CategoryItemiList items={data.itemCards} />
           }

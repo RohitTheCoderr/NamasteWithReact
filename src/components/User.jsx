@@ -4,16 +4,16 @@ const UserProfile = function (props) {
 
     useEffect(()=>{
       const timer=  setInterval(()=>{
-            console.log("Namaste React function component");
+            // console.log("Namaste React function component");
         }, 1000)
-        console.log("useEffect");
+        // console.log("useEffect");
 
         return ()=>{
             clearInterval(timer);
-            console.log("useEffect return");
+            // console.log("useEffect return");
         }
     }, [])
-console.log("render");
+// console.log("render");
     return(
         <>
         <div id="user-card">

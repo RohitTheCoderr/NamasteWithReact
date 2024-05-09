@@ -1,12 +1,17 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+
 
 const Header =()=>{
     const [loginBtn, setLoginBtn]= useState("Login")
-    const onlineStatus=useOnlineStatus()
-    const liStyle = "p-1 m-1 h-10 font-bold "
+    const onlineStatus=useOnlineStatus();
+
+    const {loggedInUser} = useContext(UserContext);
+
+    const liStyle = "p-1 m-1 h-10 font-bold cursor-pointer "   // this is use for only tailwind style as variable
     return(
         <div className="flex justify-between bg-slate-400 w-full h-[150px]">
             <div className=" w-auto ">
@@ -20,6 +25,7 @@ const Header =()=>{
                     <li className={liStyle}><Link to="/contact">Contact</Link></li>
                     <li className={liStyle}><Link to="/grocery">Grocery</Link></li>
                     <li className={liStyle}>Cart</li>
+                    <li className="font-bold text-orange-600">{loggedInUser}</li>
                     {/* <li className={liStyle} >Sign</li> */}
                 </ul>
             <div className=""> 

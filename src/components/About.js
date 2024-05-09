@@ -1,6 +1,7 @@
-import UserProfile from "./User";
-// import UserProfile2 from "./UserClassCom";
+// import UserProfile from "./User";
+import {UserProfile2} from "./UserClassCom";
 import React from "react";
+import UserContext  from "../utils/UserContext";
 
 // this is Function based component
 // const About= ()=>{
@@ -31,11 +32,16 @@ class About extends React.Component{
         // console.log("parent render");
         return(
             <>
-            <div id="AboutPage">
+            <div id="AboutPage" className="bg-[#e0dcdc] text-center">
                 <h1>About UserProfile</h1>
-                <UserProfile name={"Rohit"}/>
+               <div className="w-[10rem] m-auto ">
+                <UserContext.Consumer>
+                    {({loggedInUser})=><h2 className="text-green-600">{loggedInUser}</h2>}
+                </UserContext.Consumer>
+               </div>
+                {/* <UserProfile name={"Rohit"}/> */}
                 {/* <UserProfile2 name={"Aryan"} qualification={"BCA"} contact= { "aakujmar12312@wfjsf"} location={"Faridabad"}/> */}
-                {/* <UserProfile2 email={"rohitkumar9643017@gmail.com"}/> */}
+                <UserProfile2 email={"rohitkumar9643017@gmail.com"}/>
             </div>
             </>
             ) 

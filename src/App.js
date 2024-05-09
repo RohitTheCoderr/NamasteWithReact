@@ -1,4 +1,4 @@
-import React, { lazy,Suspense } from "react";
+import React, { lazy,Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import BodyLayout from "./components/Body";
@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import ResturentMenu from "./components/ResturentMenu";
 import Footer from "./components/Footer";
+import UserContext from "./utils/UserContext";
 // import Grocery from "./components/grocery";
 
 // if we want to our component is load as lazy so we can use lazy and the import the component is totalely different 
@@ -17,12 +18,30 @@ import Footer from "./components/Footer";
 const Grocery=lazy(()=>import("./components/grocery"))
 
 const AppLayout = ()=>{
+    //  authentication
+    const [userName, setUserName]= useState()
+
+useEffect(()=>{
+    // make an API call and send userName and password
+    const data= {
+        name:"Rohit"
+    }
+    setUserName(data.name)
+}, [])
+console.log(setUserName);
     return(
+            // and  in my all App uservalue is Aryan but 
+              // only header value is Rohit
+            <UserContext.Provider value={{loggedInUser:"Aryan"}}> 
         <div className="">
+            {/* <UserContext.Provider value={{loggedInUser:userName, setUserName}}>   */}
+            <UserContext.Provider value={{loggedInUser:userName}}>  
           <Header/>
+        </UserContext.Provider>
             <Outlet/>
           <Footer/>
         </div>
+        </UserContext.Provider>
     )
    }
 
@@ -34,6 +53,7 @@ children:[
     path: '/',
     element: <BodyLayout/>
 },
+
 {
     path : '/about',
     element: <About/>

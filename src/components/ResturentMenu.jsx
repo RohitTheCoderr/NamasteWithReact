@@ -59,7 +59,7 @@ const [showIndex, setShowIndex]=useState(0)
                          <div className="h-5 w-5 bg-green-500 rounded flex justify-center mt-1 text-white text-xl">*</div>
                          <p>{avgRating} <span>({totalRatingsString})</  span> - {costForTwoMessage}</p>
                       </div>
-                      <p className="text-orange-600 font-serif font-semibold underline">{cuisines.join(", ")}</p>
+                      <p className="text-orange-600 font-serif font-semibold underline cursor-pointer">{cuisines.join(", ")}</p>
                       <div className="flex my-3">
                           <div className="mr-4">
                             <div className="h-2 w-2 rounded-full bg-slate-400 mt-1.5"></div>

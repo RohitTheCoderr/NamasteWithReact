@@ -243,16 +243,39 @@ Passing props is a great way to explicitly pipe data through your UI tree to the
 
 But passing props can become verbose and inconvenient when you need to pass some prop deeply through the tree, or if many components need the same prop. The nearest common ancestor could be far removed from the components that need data, and lifting state up that high can lead to a situation called “prop drilling”.
  # Note: - in a simple way props drilling is way where we pass props one component to many component that is called props drilling 
- If we need to pass some prop deeply through the tree then it it not good just one or two nearest component then it is good but pass the props through more then 2,3 then it used is bad
+ If we need to pass some prop deeply through the tree then it is not good just one or two nearest component then it is good but pass the props through more then 2,3 then it used is bad
 
 ##  In this situation we can use context hook,  react have a superPower for solving this problem by using context
 there are two type to consume this context
 1. by using context hooks 
 2. by using Consumer 
-# NOTE:-> becically coonsumer is use in class based component. its old way to consume context 
+# NOTE:-> besically consumer is use in class based component. its old way to consume context 
 but nowadays we use a function based component so we use a useContext hook 
 
+# NOTE: - suppose my userContext value come from any api call and we want to use data in my whole app so we use a provider like
+    <UserContext.Provider value={{loggedInUser:userName}}>
+        <div className="">
+          <Header/>
+            <Outlet/>
+          <Footer/>
+        </div>
+        </UserContext.Provider>
 
+  # but suppose if we wnat to only header or any specific component only change value and other component are default value then we use provider only that component like I want to only header value is change and other whole in app show default value so we can write like 
+        <div className="">
+    <UserContext.Provider value={{loggedInUser:userName}}>
+          <Header/>
+        </UserContext.Provider>
+            <Outlet/>
+          <Footer/>
+        </div>
+
+# after write this line of code only change in header component value and other component show default value
+that the power of peovider in useContext
+
+# here question for you can we set of value of usercontext defferent component in different like
+we want to show in the header component different value and body is also diff and other component is default value show 
+# Let's come to do this 
 video pause on 1:07:00 remaining video is 1:1:00
 
 search senerio meaning
