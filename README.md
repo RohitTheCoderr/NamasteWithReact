@@ -276,6 +276,20 @@ that the power of peovider in useContext
 # here question for you can we set of value of usercontext defferent component in different like
 we want to show in the header component different value and body is also diff and other component is default value show 
 # Let's come to do this 
-video pause on 1:07:00 remaining video is 1:1:00
 
-search senerio meaning
+### _____ this is Episode 12 _____ ###
+#### NOW WE TEACH ABOUT REDUX 
+Getting Started with Redux
+Redux is a JS library for predictable and maintainable global state management.
+
+It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
+
+You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.
+
+## redux toolkit
+- npm install @reduxjs/toolkit  and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch (action)
+-Selector

@@ -9,6 +9,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import ResturentMenu from "./components/ResturentMenu";
 import Footer from "./components/Footer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import AppStore from "./utils/appStore";
 // import Grocery from "./components/grocery";
 
 // if we want to our component is load as lazy so we can use lazy and the import the component is totalely different 
@@ -32,6 +34,7 @@ console.log(setUserName);
     return(
             // and  in my all App uservalue is Aryan but 
               // only header value is Rohit
+              <Provider store={AppStore}>
             <UserContext.Provider value={{loggedInUser:"Aryan"}}> 
         <div className="">
             {/* <UserContext.Provider value={{loggedInUser:userName, setUserName}}>   */}
@@ -42,6 +45,7 @@ console.log(setUserName);
           <Footer/>
         </div>
         </UserContext.Provider>
+        </Provider>
     )
    }
 

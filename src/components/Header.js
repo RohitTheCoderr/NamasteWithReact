@@ -3,13 +3,15 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 
 const Header =()=>{
     const [loginBtn, setLoginBtn]= useState("Login")
     const onlineStatus=useOnlineStatus();
-
     const {loggedInUser} = useContext(UserContext);
+    //  subscribing to the store using a selector
+    const cartItems= useSelector((store)=>{store.cart.items})
 
     const liStyle = "p-1 m-1 h-10 font-bold cursor-pointer "   // this is use for only tailwind style as variable
     return(
@@ -24,7 +26,7 @@ const Header =()=>{
                     <li className={liStyle}><Link to={'/about'}>About</Link></li>
                     <li className={liStyle}><Link to="/contact">Contact</Link></li>
                     <li className={liStyle}><Link to="/grocery">Grocery</Link></li>
-                    <li className={liStyle}>Cart</li>
+                    <li className="p-1 m-1 h-10 font-bold cursor-pointer text-green-700 ">Cart ({cartItems.length} item)</li>
                     <li className="font-bold text-orange-600">{loggedInUser}</li>
                     {/* <li className={liStyle} >Sign</li> */}
                 </ul>
