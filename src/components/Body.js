@@ -4,9 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-// hello rohit
-// import UserContext from "../utils/UserContext";
-// import { HOMEPAGE_APi } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const BodyLayout =()=>{
   // const [resListData, setResListData] = useState(resList) // agr ham yha resList ko dalte h to pahle ye resList ki data render hoga jaise hi json ki data fetch ho jayega fir ye hat jayega 
@@ -18,17 +16,12 @@ const BodyLayout =()=>{
     fetchData();
   },[]);
 
-// console.log("body data render",resListData );
-
   const fetchData = async()=>{
-   // https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4089123&lng=77.3177894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
-   try {
+    try {
      const data =await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4089123&lng=77.3177894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const jsondata = await data.json();
-      // console.log(jsondata);
       const alldata= jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       setResListData(alldata);
-      // console.log(alldata);
       setFilteredListResturent(alldata);
     
    } catch (error) {
@@ -39,9 +32,7 @@ const BodyLayout =()=>{
   const onlineStatus =useOnlineStatus();
   if (onlineStatus===false) return(<h1>Looks like yu're Offline please check your internet connections</h1>)
   //  now we no need of declared of conditional rendering diffrent place because we use in turnery oprator below 
-  // hello rohit
-// const {loggedInUser, setUserName}=useContext(UserContext)
-
+const {loggedInUser, setUserName}=useContext(UserContext);
 
     return resListData.length== 0 ? (
     <Shimmer/>
@@ -65,12 +56,11 @@ const BodyLayout =()=>{
                         }}>Top rated restro</button>
                 </div>
 
-                {/* Hello Rohit solve this problem  */}
-                {/* <div>
+                <div>
                   <label>Username: </label>
-                  <input className="w-[250px] h-8 rounded-lg bg-gray-200 px-2 mx-2 " placeholder="Username" value={loggedInUser} onChange={(e) =>{ setUserName(e.target.value)}}/>
-            
-                </div> */}
+                  <input className="w-[250px] h-8 rounded-lg bg-gray-200 px-2 mx-2 " placeholder="Username" value={loggedInUser} onChange={(e) => {setUserName(e.target.value)}}/>
+                </div>
+
             </div>
           <div className="flex flex-wrap justify-center h-auto my-4 bg-gray-100 rounded-lg"> 
           {filteredListResturent < 1 ? <p className=" font-bold bg-rose-500 px-8 py-4 text-lg">No Items Found !!!</p> :

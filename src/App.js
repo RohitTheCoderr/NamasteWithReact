@@ -29,22 +29,24 @@ useEffect(()=>{
         name:"Rohit"
     }
     setUserName(data.name)
+    console.log(data.name);
 }, [])
-console.log(setUserName);
+
     return(
             // and  in my all App uservalue is Aryan but 
               // only header value is Rohit
               <Provider store={AppStore}>
-            <UserContext.Provider value={{loggedInUser:"Aryan"}}> 
+            {/* <UserContext.Provider value={{loggedInUser:"Aryan"}}>  */}
         <div className="">
-            {/* <UserContext.Provider value={{loggedInUser:userName, setUserName}}>   */}
-            <UserContext.Provider value={{loggedInUser:userName}}>  
+            {/* rohit ############## */}
+            <UserContext.Provider value={{loggedInUser:userName, setUserName}}>  
+            {/* <UserContext.Provider value={{loggedInUser:userName}}>   */}
           <Header/>
-        </UserContext.Provider>
             <Outlet/>
+        </UserContext.Provider>
           <Footer/>
         </div>
-        </UserContext.Provider>
+        {/* </UserContext.Provider> */}
         </Provider>
     )
    }
