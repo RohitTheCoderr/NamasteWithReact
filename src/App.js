@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import AppStore from "./utils/appStore";
+import Cart from "./components/Cart";
 // import Grocery from "./components/grocery";
 
 // if we want to our component is load as lazy so we can use lazy and the import the component is totalely different 
@@ -29,22 +30,18 @@ useEffect(()=>{
         name:"Rohit"
     }
     setUserName(data.name)
-    console.log(data.name);
+    // console.log(data.name);
 }, [])
 
     return(
-            // and  in my all App uservalue is Aryan but 
-              // only header value is Rohit
               <Provider store={AppStore}>
             {/* <UserContext.Provider value={{loggedInUser:"Aryan"}}>  */}
         <div className="">
-            {/* rohit ############## */}
             <UserContext.Provider value={{loggedInUser:userName, setUserName}}>  
-            {/* <UserContext.Provider value={{loggedInUser:userName}}>   */}
           <Header/>
             <Outlet/>
-        </UserContext.Provider>
           <Footer/>
+        </UserContext.Provider>
         </div>
         {/* </UserContext.Provider> */}
         </Provider>
@@ -75,6 +72,10 @@ children:[
 {
     path : '/resturent/:resId',
     element: <ResturentMenu/>
+},
+{
+    path : '/Cart',
+    element: <Cart/>
 },
 ],
 errorElement:<Error/>,

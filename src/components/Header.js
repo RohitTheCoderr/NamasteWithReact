@@ -26,7 +26,7 @@ const Header =()=>{
                     <li className={liStyle}><Link to={'/about'}>About</Link></li>
                     <li className={liStyle}><Link to="/contact">Contact</Link></li>
                     <li className={liStyle}><Link to="/grocery">Grocery</Link></li>
-                    <li className="p-1 m-1 h-10 font-bold cursor-pointer text-green-700 ">Cart <span className="text-red-500"> ({cartItems.length})items</span></li>
+                    <li className="p-1 m-1 h-10 font-bold cursor-pointer text-green-700 "><Link to="/Cart">Cart <span className="text-red-500"> ({cartItems.length})items</span></Link></li>
                     <li className="font-bold text-orange-600">{loggedInUser}</li>
                     {/* <li className={liStyle} >Sign</li> */}
                 </ul>
@@ -37,5 +37,4 @@ const Header =()=>{
         </div>
     )
 }
-
 export default Header;

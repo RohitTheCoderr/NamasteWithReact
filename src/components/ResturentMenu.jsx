@@ -34,7 +34,7 @@ const [showIndex, setShowIndex]=useState(0)
             const ItemsCategories = restu.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"]==
             "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
             // console.log("this is categories",ItemsCategories);
-      setCategories(ItemsCategories)
+           setCategories(ItemsCategories)
         }
     }, [restu]);
     
@@ -116,8 +116,7 @@ const [showIndex, setShowIndex]=useState(0)
                             </div>
                            )))}
                         </div>
-                    </div>
-                    */}
+                    </div> */}
 
                    <div>
                       {

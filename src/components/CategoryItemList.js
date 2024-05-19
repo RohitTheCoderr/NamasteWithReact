@@ -1,8 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 // import { CDN2_URL } from "../utils/constants";
 
 const CategoryItemiList = ({ items }) => {
-  console.log(items);
+  // console.log(items);
+ const dispatch =useDispatch();
+  const handleAddItem=(item)=>{
+    dispatch(addItem(item));
+  };
+
   return (
     <>
       <div>
@@ -48,12 +55,12 @@ const CategoryItemiList = ({ items }) => {
                  alt={item?.card?.info?.name}
               />
               <div className="absolute mb-[-7rem]">
-              <button  className=" py-0 px-2 bg-white rounded-sm text-green-700 cursor-pointer">{" "} Add +</button>
+              <button  className=" py-0 px-2 bg-white rounded-sm text-green-700 cursor-pointer"  onClick={()=>handleAddItem(item)}>{" "} Add +</button>
               </div>
             </div>
           </div>
         ))}
-        {/*  peuse video at 1:20:00  part 11*/}
+      
       </div>
     </>
   );

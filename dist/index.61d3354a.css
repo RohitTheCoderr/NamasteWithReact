@@ -411,6 +411,10 @@ img, video {
   height: auto;
 }
 
+.min-h-\[77vh\] {
+  min-height: 77vh;
+}
+
 .w-0 {
   width: 0;
 }
@@ -771,6 +775,10 @@ img, video {
 
 .align-middle {
   vertical-align: middle;
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 .font-serif {
