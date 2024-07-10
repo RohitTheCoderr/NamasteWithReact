@@ -12,7 +12,10 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import AppStore from "./utils/appStore";
 import Cart from "./components/Cart";
+// import UseFormikExample from "./components/SignUp";
+// import SignUpLinks from "./components/SignUp";
 // import Grocery from "./components/grocery";
+// import {UseFormikExample} from
 
 // if we want to our component is load as lazy so we can use lazy and the import the component is totalely different 
 // we can also import Grocery component by using lazy. lazy is provide by react its take a call a import it is also function but this import is not a same like upper we used 
@@ -40,6 +43,8 @@ useEffect(()=>{
             <UserContext.Provider value={{loggedInUser:userName, setUserName}}>  
           <Header/>
             <Outlet/>
+            {/* <SignUpLinks/> */}
+            {/* <UseFormikExample/> */}
           <Footer/>
         </UserContext.Provider>
         </div>
@@ -83,6 +88,7 @@ errorElement:<Error/>,
    ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={approuter}/>);
+
 
 
 

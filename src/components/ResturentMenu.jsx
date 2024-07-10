@@ -19,8 +19,6 @@ function ResturentMenu() {
 
 const [showIndex, setShowIndex]=useState(0)
 
-
-
     const { resId } = useParams();
     // Fetching restaurant menu using custom hook
     const restu = useResturentMenu(resId);
@@ -43,27 +41,25 @@ const [showIndex, setShowIndex]=useState(0)
     if (restu === null) {
         return <Shimmer />;
     }
-// console.log("list==>",restu.data.cards[2]?.card?.card?.info);
     const { name, locality, city, cuisines, costForTwoMessage, avgRating, totalRatingsString , sla,feeDetails} = restu.data.cards[2]?.card?.card?.info || {};
     const {deliveryTime,slaString,lastMileTravelString}=sla
-// console.log("message:===",feeDetails.message);
-// console.log("delevery deytails",feeDetails);
+    
     return (
         <>
         <div className="flex  justify-center items-center text-center">
             <center className="w-3/5">
               <div className=" h-auto  mx-2rem m-4 py-4 ">
                   <h1 className="text-black font-poping font-bold text-start text-3xl">{name}</h1>
-                  <div className=" h-52  border-gray-400 shadow-xl shadow-gray-500 rounded-2xl text-start px-4 bg-slate-100 my-4">
+                  <div className=" h-52  border-gray-400 shadow-xl shadow-gray-500 rounded-2xl text-start p-4 bg-slate-100 my-4">
                       <div className="flex gap-2">
-                         <div className="h-5 w-5 bg-green-500 rounded flex justify-center mt-1 text-white text-xl">*</div>
+                         <div className="h-5 w-5 bg-green-500 rounded flex justify-center mb-1 mt-1 text-white text-xl">*</div>
                          <p>{avgRating} <span>({totalRatingsString})</  span> - {costForTwoMessage}</p>
                       </div>
                       <p className="text-orange-600 font-serif font-semibold underline cursor-pointer">{cuisines.join(", ")}</p>
                       <div className="flex my-3">
                           <div className="mr-4">
                             <div className="h-2 w-2 rounded-full bg-slate-400 mt-1.5"></div>
-                            <div className="h-6 w-0.5 bg-slate-400 ml-0.5 "></div>
+                            <div className="h-6 w-0.5 bg-slate-400 ml-[3.5px] "></div>
                             <div className="h-2 w-2 rounded-full bg-slate-400"></div>
                           </div>
                           <div>
@@ -71,26 +67,26 @@ const [showIndex, setShowIndex]=useState(0)
                            <p className="font-bold pt-1">{slaString}</p>
                           </div>
                       </div>
-                      <div className="border-t-[1px] border-gray-400 flex" ><img className="h-6 mt-4 mr-4" src={DeleveryBoy} alt="dele" /><p className="mt-4">{feeDetails.message}</p></div>
+                      <div className="border-t-[1px] border-gray-400 flex" ><img className="h-6 mt-4 mr-4" src={DeleveryBoy} alt="D-boy" /><p className="mt-4 ">{feeDetails.message}</p></div>
                    </div>
-                   <button className=" my-4 bg-orange-500  rounded-full h-10 px-4" onClick={() => {
+                   {/* <button className=" my-4 bg-orange-500  rounded-full h-10 px-4" onClick={() => {
                     // const vegFilter = optionVegOrNon.filter((val) => val?.card?.info?.isVeg === 1);
                     const vegFilter = filterVandN.filter((val) => val?.card?.info?.isVeg === 1);
                     setOptionVegOrNon(vegFilter);
-                   }}>Click For Veg</button>
+                   }}>Click For Veg</button> */}
 
-                   <button className="my-4 mx-2 bg-green-500 rounded-full h-10 px-4" onClick={() => {
+                   {/* <button className="my-4 mx-2 bg-green-500 rounded-full h-10 px-4" onClick={() => {
                     // const nonVegFilter = optionVegOrNon.filter((val) => val?.card?.info?.itemAttribute?.vegClassifier === "NONVEG");
                     const nonVegFilter = filterVandN.filter((val) => val?.card?.info?.itemAttribute?.vegClassifier === "NONVEG");
                     setOptionVegOrNon(nonVegFilter);
-                    }}>Click For Non-Veg</button>
+                    }}>Click For Non-Veg</button> */}
 
-                    <button className="my-4  bg-red-600 rounded-full h-10 w-auto px-4" onClick={() => {
+                    {/* <button className="my-4  bg-red-600 rounded-full h-10 w-auto px-4" onClick={() => {
                     const { itemCards } = restu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card || [];
                     setOptionVegOrNon(itemCards);
-                    }}>Both Veg & Non-Veg</button>
+                    }}>Both Veg & Non-Veg</button> */}
 
-                   <h2 className="bg-sky-300 py-2 rounded-lg text-blue-900 text-lg my-2 ">Menu Of This Restaurant</h2>
+                   <h2 className="bg-gray-900 mt-12 py-2 rounded-lg text-white text-lg  ">⪔⨎⨕⋮⇞ MENUS ⇞⋮⨕⨎⪔</h2>
                   {/* <div  className="text-start font-bold ">Recommended ( <span>{optionVegOrNon.length}</span> )
                        <div className="flex justify-end w-4/5">
                           <button onClick={toggleItems} className="px-1 text-2xl bg-gray-200 rounded-sm rotate-90  ">{visible ? '<' : '>'}</button>

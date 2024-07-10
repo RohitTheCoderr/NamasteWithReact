@@ -13,7 +13,10 @@ const cartSlice =createSlice({
         state.items.pop();
       },
       clearCart:(state)=>{
-        state.items.length=0;
+        // redux toolkit - either mutate the existing state or return a new State
+        // state.items.length=0; // originalState =[]
+         return {items:[]};
+
       }
     }
 })

@@ -19,7 +19,7 @@ const ResContainer= (props)=>{
              <p className="font-bold font-poping">{name}</p>
              <div className="flex justify-evenly font-medium bg-gray-200"> 
                 <p className="ptag">{costForTwo}</p>
-                <h5 className="">Rating: <span className="text-green-700 bg-slate-100 px-2">{avgRating}*</span></h5>
+                <h5 className="">Rating: <span className="text-green-700 bg-slate-100 px-2">{avgRating} *</span></h5>
              </div>
              <h5 className="ptag deliveryT">DeliveryTime: {sla.deliveryTime} mins</h5> 
              <p><span className="font-bold text-red-500">Items:- </span>{cuisines.join(", ")}</p>

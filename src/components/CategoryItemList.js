@@ -16,7 +16,7 @@ const CategoryItemiList = ({ items }) => {
         {items.map((item) => (
           <div
             key={item.card?.info?.id}
-            className="border-b-2  border-gray-400 my-2 bg-gray-100 p-2 text-left flex justify-between"
+            className="border-b-2  border-gray-400 my-2 bg-gray-100 hover:bg-gray-900 hover:text-white p-2 text-left flex justify-between rounded-lg cursor-pointer"
           >
             <div className="w-[70%]">
               <div className="h-5 w-5 mb-1 border-2 border-green-700 rounded flex justify-center items-center ">
@@ -55,7 +55,7 @@ const CategoryItemiList = ({ items }) => {
                  alt={item?.card?.info?.name}
               />
               <div className="absolute mb-[-7rem]">
-              <button  className=" py-0 px-2 bg-white rounded-sm text-green-700 cursor-pointer"  onClick={()=>handleAddItem(item)}>{" "} Add +</button>
+                <button  className=" py-0 px-2 bg-gray-200 rounded-sm text-green-700 cursor-pointer hover:bg-black hover:text-white" onClick={()=>handleAddItem(item)}>{" "} Add +</button>
               </div>
             </div>
           </div>

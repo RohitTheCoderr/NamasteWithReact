@@ -219,7 +219,6 @@ but for loading it consume same time in this time we show on this screen somethi
 * example  : use prometed tag on thi card 
  see video no 11 0 to 23 minutes 
 
-
 # note:- after Higher Order Function we leaarn about 
 ### What is Control and uncontrol conmponent
 ## lifting the component 
@@ -292,4 +291,31 @@ You can use Redux together with React, or with any other view library. It is tin
 - Connect our store to our app
 - Slice (cartSlice)
 - dispatch (action)
--Selector
+- Selector
+
+# reducer:- reducer is nothing else this is comvination of small-small reducer 
+history of redux:- 
+vanialla(older) redux => DON'T MUTATE STATE
+So earliar we mutate like 
+const newState = [...state];
+newState.items.push(action.payload);
+return newState;
+
+# but now in the redux toolkit 
+we can directly mutate the state like
+state.items.push(action.payload);
+
+but in the actull behind the scene redux toolkit is mutating the state something like
+const newState = [...state];
+newState.items.push(action.payload);
+return newState;
+
+<!-- part 13 -->
+
+## types of testing (devloper)
+- Unit Testing
+- Integration Testing
+- End to End Testing (E2E)
+
+
+
