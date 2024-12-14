@@ -6,7 +6,7 @@ import UserContext from "../utils/UserContext";
 const ResContainer= (props)=>{
     const {resData}=props;
     const {name,cuisines,costForTwo,avgRating,sla, areaName,aggregatedDiscountInfoV3}=resData?.info;
-   const {loggedInUser}=useContext(UserContext)
+    const {loggedInUser}=useContext(UserContext)
    
     return(
       <>

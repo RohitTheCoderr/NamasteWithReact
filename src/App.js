@@ -12,6 +12,7 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import AppStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import TestuseRef from "./TestuseRef";
 // import UseFormikExample from "./components/SignUp";
 // import SignUpLinks from "./components/SignUp";
 // import Grocery from "./components/grocery";
@@ -45,6 +46,7 @@ useEffect(()=>{
             <Outlet/>
             {/* <SignUpLinks/> */}
             {/* <UseFormikExample/> */}
+        <TestuseRef/>
           <Footer/>
         </UserContext.Provider>
         </div>

@@ -19,7 +19,11 @@ const BodyLayout =()=>{
   const fetchData = async()=>{
     try {
      const data =await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4089123&lng=77.3177894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+     console.log("mydatabody", data);
+     
       const jsondata = await data.json();
+      console.log("bodydata", jsondata);
+      
       const alldata= jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       setResListData(alldata);
       setFilteredListResturent(alldata);
